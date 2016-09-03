@@ -1,6 +1,6 @@
 # If Error
 
-This library helps automate error handling in Node.JS applications.
+This tiny library helps automate error handling in Node.JS applications.
 
 ## Install
 
@@ -14,10 +14,11 @@ Patches are welcome.
 ## Example
 
 Async operations can often experience errors.  These errors are
-endemic to the world at large, not to the code.  Still, we write
-boilerplate in the form of `if (err) { return next(err) }`, catching
-these relative low-level errors one by one.  Because such errors are
-rare, they lead to subtle bugs that are difficult to track down.
+endemic to the world at large, not due to bugs in the code.  Still, we
+write boilerplate in the form of `if (err) { return next(err) }`,
+catching these relative low-level errors one by one.  Because such
+errors are rare, they lead to subtle bugs that are difficult to track
+down.
 
 ```
 var middleware = function (next) {
@@ -35,6 +36,9 @@ var middleware = function (next) {
 ```
 
 This tiny library greatly increases the robustness of this boilerplate
+code.  Rather than a boilerplate `if` statement, you declare your
+error handler - and then make boilerplate calls to it.  If you use
+this style everywhere, `err` values will only appear in your logging
 code.
 
 ```
@@ -51,8 +55,3 @@ var middleware = function (next) {
   }));
 };
 ```
-
-Rather than a boilerplate `if` statement, we declare our error handler
-and then make a boilerplate `handleErr` call.  It is now very
-difficult to write code in which these errors accidentally go
-un-handled.

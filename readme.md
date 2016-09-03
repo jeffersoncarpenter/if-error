@@ -28,7 +28,7 @@ var middleware = function (next) {
       if (err) { return next(err); }
       return asyncOperation3(result2, function (err, result3) {
         if (err) { return next(err); }
-	return next(null, result3);
+        return next(null, result3);
       });
     });
   });
@@ -49,7 +49,7 @@ var middleware = function (next) {
   return asyncOperation1(handleErr(function (result1) {
     return asyncOperation2(result1, handleErr(function (result2) {
       return asyncOperation3(result2, hanldeErr(function (result3) {
-	return next(null, result3);
+        return next(null, result3);
       }));
     }));
   }));

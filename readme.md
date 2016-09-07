@@ -1,8 +1,8 @@
 # If Error
 
-Edit: you should use promises instead
-
 This tiny library helps automate error handling in Node.JS applications.
+
+Edit: you should use promises instead
 
 ## Install
 

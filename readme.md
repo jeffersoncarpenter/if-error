@@ -2,8 +2,6 @@
 
 This tiny library helps automate error handling in Node.JS applications.
 
-Edit: you should use promises instead
-
 ## Install
 
 `npm install if-error`
